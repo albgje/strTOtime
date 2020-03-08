@@ -91,37 +91,9 @@ def get_time(time:str):
 
 def Format(unFormattedTimeString:str):
     ufts = unFormattedTimeString.lower()
-    if 'weeks' in ufts:
-        uftsl = ufts.split('weeks')
-        ufts = 'w'.join(uftsl)
-    if 'week' in ufts:
-        uftsl = ufts.split('week')
-        ufts = 'w'.join(uftsl)
-    if 'days' in ufts:
-        uftsl = ufts.split('days')
-        ufts = 'd'.join(uftsl)
-    if 'day' in ufts:
-        uftsl = ufts.split('day')
-        ufts = 'd'.join(uftsl)
-    if 'minutes' in ufts:
-        uftsl = ufts.split('minutes')
-        ufts = 'm'.join(uftsl)
-    if 'minute' in ufts:
-        uftsl = ufts.split('minute')
-        ufts = 'm'.join(uftsl)
-    if 'seconds' in ufts:
-        uftsl = ufts.split('seconds')
-        ufts = 's'.join(uftsl)
-    if 'second' in ufts:
-        uftsl = ufts.split('second')
-        ufts = 's'.join(uftsl)
-    if 'hours' in ufts:
-        uftsl = ufts.split('hours')
-        ufts = 'h'.join(uftsl)
-    if 'hour' in ufts:
-        uftsl = ufts.split('hour')
-        ufts = 'h'.join(uftsl)
-    return ufts
+    uftsr = ufts.replace('weeks', 'w').replace('week', 'w').replace('days', 'd').replace('day', 'd').replace('hours', 'h').replace('hour', 'h').replace('minutes', 'm').replace('minute', 'm').replace('seconds', 's').replace('second','s')
+
+    return uftsr
 
 
 
@@ -244,7 +216,13 @@ def get_seconds_to_str(seconds: int):
 
     formatted = millenium + century + decade + year + month + week + day + hour + minute + second
     formatted = formatted.strip() + '.'
-    return formatted
+    formaty = []
+    formatyo = []
+    formatyo = formatted.split()
+    for i in formatyo:
+        if i != '':
+            formaty.append(i)
+    return ' '.join(formaty)
 
 
     
