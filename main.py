@@ -240,9 +240,10 @@ def get_seconds_to_str(seconds: int):
     if hour != '':
         minute = ' ' + minute
     if minute != '':
-        second = ' and ' + second
+        second = ' ' + second
 
-    formatted = millenium + century + decade + year + month + week + day + hour + minute + second + '.'
+    formatted = millenium + century + decade + year + month + week + day + hour + minute + second
+    formatted = formatted.strip() + '.'
     return formatted
 
 
